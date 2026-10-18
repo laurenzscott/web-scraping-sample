@@ -1,0 +1,22 @@
+{
+ "source": "https://books.toscrape.com/catalogue/page-1.html",
+ "started_utc": "2026-10-18T19:44:44Z",
+ "finished_utc": "2026-10-18T19:45:45Z",
+ "ok": true,
+ "error": null,
+ "pages_read": 50,
+ "listings_read": 1000,
+ "duplicates_removed": 0,
+ "rows_collected": 1000,
+ "missing_price": 0,
+ "missing_rating": 0,
+ "columns": [
+  "title",
+  "price",
+  "currency",
+  "availability",
+  "rating",
+  "url",
+  "scraped_at"
+ ]
+}

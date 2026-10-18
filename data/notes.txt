@@ -1,0 +1,16 @@
+SCRAPE NOTES - books.toscrape.com
+
+  started (UTC) ........ 2026-10-18T19:44:44Z
+  finished (UTC) ....... 2026-10-18T19:45:45Z
+  pages read ........... 50
+  listings read ........ 1000
+  duplicates removed ... 0  (rule: same url)
+  rows collected ....... 1000
+  missing price ........ 0  (left empty, not guessed)
+  missing rating ....... 0  (left empty, not guessed)
+
+  price is a number, currency in its own column
+  availability copied as the page states it
+  every row carries its full link, so any line can be checked
+
+RESULT: OK
