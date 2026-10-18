@@ -1,0 +1,45 @@
+name: Scrape the catalogue
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC - weekly is enough and keeps the load low
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the tests
+        run: python tests/test_parse.py
+
+      - name: Scrape
+        run: python scrape.py
+
+      - name: Commit data/ back to the repository
+        run: |
+          git config user.name "scraping-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes in data/ - nothing to commit."
+            exit 0
+          fi
+          git commit -m "Update data/ from weekly scrape"
+          git push
