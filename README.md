@@ -1,5 +1,9 @@
 # web-scraping-sample
 
+[![Scrape catalogue](https://github.com/laurenzscott/web-scraping-sample/actions/workflows/scrape.yml/badge.svg)](https://github.com/laurenzscott/web-scraping-sample/actions/workflows/scrape.yml)
+
+![Book catalogue scraped into a clean CSV, with delivery notes](docs/03-web-scraping.png)
+
 A small, polite scraper that turns an online book catalogue into a clean CSV,
 with delivery notes that say exactly what was collected and what was left empty.
 
